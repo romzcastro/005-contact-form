@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="../src/output.css" />
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body class="text-sm text-left min-h-screen flex-center bg-secondary_2 p-6">
+    <main>
+      <!-- wrapper -->
+      <section class="bg-secondary_1 rounded-xl p-5">
+        <!-- main form -->
+        <h1 class="text-secondary_3 font-bold text-3xl pb-8">Contact Us</h1>
+        <form class="font-medium">
+          <div>
+            <div class="pb-3">
+              <label for="fname"
+                ><h2 class="text-secondary_3 pb-1">
+                  First Name<span class="text-primary_2"> *</span>
+                </h2></label
+              >
+              <input class="w-full p-1 py-3 border-2 rounded-md" type="text" />
+              <p><em>error message</em></p>
+            </div>
+            <div class="pb-3">
+              <label for="lname"
+                ><h2 class="text-secondary_3 pb-1">
+                  Last Name<span class="text-primary_2"> *</span>
+                </h2></label
+              >
+              <input class="w-full p-1 py-3 border-2 rounded-md" type="text" />
+              <p><em>error message</em></p>
+            </div>
+          </div>
+          <div class="pb-3">
+            <h2 class="text-secondary_3 pb-1">
+              Email Address<span class="text-primary_2"> *</span>
+            </h2>
+            <input class="w-full p-1 py-3 border-2 rounded-md" type="email" />
+            <p><em>error message</em></p>
+          </div>
+          <div>
+            <div class="pb-3">
+              <label for="querytype"
+                ><h2 class="text-secondary_3 pb-1">
+                  Query Type<span class="text-primary_2"> *</span>
+                </h2></label
+              >
+            </div>
+            <div
+              class="flex justify-start items-center p-2 py-3 border-2 rounded-md gap-3 mb-3"
+            >
+              <input class="ml-3" type="radio" value="General Enquiry" />
+              <label class="flex" for="generalenquiry">
+                <h3 class="text-secondary_3">General Enquiry</h3></label
+              >
+            </div>
+            <div
+              class="flex justify-start items-center p-2 py-3 border-2 rounded-md gap-3 mb-3"
+            >
+              <input class="ml-3" type="radio" value="Support Request" />
+              <label class="flex" for="supportrequest">
+                <h3 class="text-secondary_3">Support Request</h3></label
+              >
+            </div>
+            <p><em>error message</em></p>
+          </div>
+          <div class="pb-3">
+            <label for="message"
+              ><h2 class="text-secondary_3 pb-1">
+                Message<span class="text-primary_2"> *</span>
+              </h2></label
+            >
+            <textarea
+              class="w-full p-1 border-2 rounded-md"
+              name="message"
+              rows="6"
+              cols="30"
+            ></textarea>
+            <p><em>error message</em></p>
+          </div>
+          <div
+            class="flex justify-start items-center p-2 rounded-md gap-3 my-3"
+          >
+            <input type="checkbox" value="consent" />
+            <label for="consent"
+              ><h2 class="text-base text-secondary_3">
+                I consent to being contacted by the team
+                <span class="text-primary_2"> *</span>
+              </h2></label
+            >
+          </div>
+          <p><em>error message</em></p>
+          <input
+            class="w-full bg-primary_2 p-3 rounded-md text-primary_1 font-bold text-base"
+            type="button"
+            onclick="alert('Hello World!')"
+            value="Submit"
+          />
+        </form>
+      </section>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Jerome R Castro</a>.
+    </div>
+  </body>
+</html>
