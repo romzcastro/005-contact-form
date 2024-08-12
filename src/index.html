@@ -11,33 +11,43 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="../src/output.css" />
+
     <title>Frontend Mentor | Contact form</title>
   </head>
-  <body class="text-sm text-left min-h-screen flex-center bg-secondary_2 p-6">
-    <main>
+  <body class="text-sm text-left min-h-screen flex-center bg-secondary_2">
+    <main class="w-screen max-w-[640px] p-6 md:w-screen md:max-w-4xl">
       <!-- wrapper -->
-      <section class="bg-secondary_1 rounded-xl p-5">
+      <section class="bg-secondary_1 rounded-xl p-5 md:p-10">
         <!-- main form -->
         <h1 class="text-secondary_3 font-bold text-3xl pb-8">Contact Us</h1>
-        <form class="font-medium">
-          <div>
-            <div class="pb-3">
-              <label for="fname"
+        <form
+          class="from-container font-medium flex flex-col md:flex md:w-full"
+          id="form"
+          onkeyup="checkInputs()"
+        >
+          <div class="md:flex gap-4">
+            <div class="form-control md:flex-1 pb-3">
+              <label
                 ><h2 class="text-secondary_3 pb-1">
                   First Name<span class="text-primary_2"> *</span>
-                </h2></label
-              >
-              <input class="w-full p-1 py-3 border-2 rounded-md" type="text" />
-              <p><em>error message</em></p>
+                </h2>
+                <input
+                  class="w-full p-1 py-3 border-2 rounded-md"
+                  id="first-name"
+                  type="text"
+                />
+              </label>
+              <small class="text-base text-primary_3">error message</small>
             </div>
-            <div class="pb-3">
+
+            <div class="pb-3 md:flex-1">
               <label for="lname"
                 ><h2 class="text-secondary_3 pb-1">
                   Last Name<span class="text-primary_2"> *</span>
                 </h2></label
               >
               <input class="w-full p-1 py-3 border-2 rounded-md" type="text" />
-              <p><em>error message</em></p>
+              <small class="text-base text-primary_3">error message</small>
             </div>
           </div>
           <div class="pb-3">
@@ -45,7 +55,7 @@
               Email Address<span class="text-primary_2"> *</span>
             </h2>
             <input class="w-full p-1 py-3 border-2 rounded-md" type="email" />
-            <p><em>error message</em></p>
+            <small class="text-base text-primary_3">error message</small>
           </div>
           <div>
             <div class="pb-3">
@@ -71,10 +81,10 @@
                 <h3 class="text-secondary_3">Support Request</h3></label
               >
             </div>
-            <p><em>error message</em></p>
+            <small class="text-base text-primary_3">error message</small>
           </div>
           <div class="pb-3">
-            <label for="message"
+            <label for="text-message"
               ><h2 class="text-secondary_3 pb-1">
                 Message<span class="text-primary_2"> *</span>
               </h2></label
@@ -85,26 +95,29 @@
               rows="6"
               cols="30"
             ></textarea>
-            <p><em>error message</em></p>
+            <small class="text-base text-primary_3">error message</small>
           </div>
-          <div
-            class="flex justify-start items-center p-2 rounded-md gap-3 my-3"
+          <div class="flex items-center p-2 rounded-md gap-3 my-3 flex-col">
+            <div class="flex w-full gap-2">
+              <input type="checkbox" value="consent" />
+              <label for="consent"
+                ><h2 class="text-base text-secondary_3">
+                  I consent to being contacted by the team
+                  <span class="text-primary_2"> *</span>
+                </h2></label
+              >
+            </div>
+
+            <div class="flex w-full">
+              <small class="text-base text-primary_3">error message</small>
+            </div>
+          </div>
+          <button
+            class="w-full bg-primary_2 p-3 rounded-md text-primary_1 font-bold text-xl hover:cursor-pointer"
+            type="submit"
           >
-            <input type="checkbox" value="consent" />
-            <label for="consent"
-              ><h2 class="text-base text-secondary_3">
-                I consent to being contacted by the team
-                <span class="text-primary_2"> *</span>
-              </h2></label
-            >
-          </div>
-          <p><em>error message</em></p>
-          <input
-            class="w-full bg-primary_2 p-3 rounded-md text-primary_1 font-bold text-base"
-            type="button"
-            onclick="alert('Hello World!')"
-            value="Submit"
-          />
+            SUBMIT
+          </button>
         </form>
       </section>
     </main>
@@ -113,5 +126,6 @@
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by <a href="#">Jerome R Castro</a>.
     </div>
+    <script src="../plugin/main.js"></script>
   </body>
 </html>
