@@ -88,7 +88,14 @@
             <div
               class="flex justify-start items-center p-2 py-3 border-2 rounded-md gap-3 mb-3"
             >
-              <input class="ml-3" type="radio" value="General Enquiry" />
+              <input
+                class="ml-3"
+                type="radio"
+                value="General Enquiry"
+                id="query-option1"
+                name="query-option"
+                onclick="return checkButton()"
+              />
               <label class="flex" for="generalenquiry">
                 <h3 class="text-secondary_3">General Enquiry</h3></label
               >
@@ -96,15 +103,19 @@
             <div
               class="flex justify-start items-center p-2 py-3 border-2 rounded-md gap-3 mb-3"
             >
-              <input class="ml-3" type="radio" value="Support Request" />
+              <input
+                class="ml-3"
+                type="radio"
+                value="Support Request"
+                id="query-option2"
+                name="query-option"
+                onclick="checkButton()"
+              />
               <label class="flex" for="supportrequest">
                 <h3 class="text-secondary_3">Support Request</h3></label
               >
             </div>
-            <p
-              id="error-query"
-              class="text-base text-primary_3 hidden peer-invalid:block"
-            >
+            <p id="error-query" class="text-base text-primary_3 hidden">
               error message
             </p>
           </div>
@@ -119,12 +130,15 @@
               name="message"
               rows="6"
               cols="30"
+              id="message"
             ></textarea>
-            <small class="text-base text-primary_3">error message</small>
+            <p id="error-message" class="text-base text-primary_3 hidden">
+              error message
+            </p>
           </div>
           <div class="flex items-center p-2 rounded-md gap-3 my-3 flex-col">
             <div class="flex w-full gap-2">
-              <input type="checkbox" value="consent" />
+              <input type="checkbox" value="consent" id="consent-check" />
               <label for="consent"
                 ><h2 class="text-base text-secondary_3">
                   I consent to being contacted by the team
@@ -134,7 +148,9 @@
             </div>
 
             <div class="flex w-full">
-              <small class="text-base text-primary_3">error message</small>
+              <p id="error-consent" class="text-base text-primary_3 hidden">
+                error message
+              </p>
             </div>
           </div>
           <button

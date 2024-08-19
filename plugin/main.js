@@ -2,21 +2,40 @@ const form = document.getElementById('form');
 const firstName = document.getElementById('first-name');
 const lastName = document.getElementById('last-name');
 const email = document.getElementById('email');
+const option1 = document.getElementById('query-option1');
+const option2 = document.getElementById('query-option2');
+const message = document.getElementById('message');
+const consentCheck = document.getElementById('consent-check');
 
 // error message
 const errorFname = document.getElementById('error-fname');
 const errorLname = document.getElementById('error-lname');
 const errorEmail = document.getElementById('error-email');
+const errorQuery = document.getElementById('error-query');
+const errorMessage = document.getElementById('error-message');
+const errorConcent = document.getElementById('error-consent');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   checkInputs();
+  checkButton();
+
+  if (!consentCheck.checked) {
+    errorConcent.innerText =
+      'To submit this form, please consent to being contacted';
+    errorConcent.style.display = 'block';
+    return false;
+  } else {
+    errorConcent.style.display = 'none';
+    form.submit;
+  }
 });
 
 function checkInputs() {
   const firstNameValue = firstName.value.trim();
   const lastNameValue = lastName.value.trim();
   const emailValue = email.value.trim();
+  const messageValue = message.value.trim();
 
   if (firstNameValue === '') {
     setErrorForFname(firstName, 'The Field is required');
@@ -47,6 +66,14 @@ function checkInputs() {
     setSuccessFor(email);
     errorEmail.style.display = 'none';
   }
+
+  if (messageValue === '') {
+    setErrorForMessage(message, 'This field is required');
+    var input = document.getElementById('message');
+    errorMessage.style.display = 'block';
+  } else {
+    errorMessage.style.display = 'none';
+  }
 }
 
 function setErrorForFname(input, message) {
@@ -70,6 +97,12 @@ function setErrorForEmail(input, message) {
   formControl.className = 'md:flex-1 pb-3 form-control error';
 }
 
+function setErrorForMessage(input, message) {
+  const formControl = input.parentElement;
+  const errorMessage = formControl.querySelector('#error-message');
+  errorMessage.innerText = message;
+}
+
 function setSuccessFor(input) {
   const formControl = input.parentElement;
   formControl.className = 'md:flex-1 pb-3 form-control success';
@@ -78,4 +111,13 @@ function isEmail(email) {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
     email
   );
+}
+
+function checkButton() {
+  if (!option1.checked && !option2.checked) {
+    errorQuery.innerText = 'Please select a query type';
+    errorQuery.style.display = 'block';
+  } else {
+    errorQuery.style.display = 'none';
+  }
 }
