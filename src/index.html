@@ -11,7 +11,7 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="../src/output.css" />
-
+    <script defer src="../plugin/main.js"></script>
     <title>Frontend Mentor | Contact form</title>
   </head>
   <body class="text-sm text-left min-h-screen flex-center bg-secondary_2">
@@ -21,41 +21,61 @@
         <!-- main form -->
         <h1 class="text-secondary_3 font-bold text-3xl pb-8">Contact Us</h1>
         <form
-          class="from-container font-medium flex flex-col md:flex md:w-full"
+          class="font-medium flex flex-col md:flex md:w-full"
           id="form"
+          action="/"
           onkeyup="checkInputs()"
         >
           <div class="md:flex gap-4">
-            <div class="form-control md:flex-1 pb-3">
+            <div class="md:flex-1 pb-3 form-control">
               <label
                 ><h2 class="text-secondary_3 pb-1">
                   First Name<span class="text-primary_2"> *</span>
                 </h2>
-                <input
-                  class="w-full p-1 py-3 border-2 rounded-md"
-                  id="first-name"
-                  type="text"
-                />
               </label>
-              <small class="text-base text-primary_3">error message</small>
+              <input
+                class="first-name w-full p-3 border-2 rounded-md"
+                id="first-name"
+                type="text"
+              />
+              <p id="error-fname" class="text-base text-primary_3 hidden">
+                error message
+              </p>
             </div>
-
-            <div class="pb-3 md:flex-1">
-              <label for="lname"
+            <div class="md:flex-1 pb-3 form-control">
+              <label
                 ><h2 class="text-secondary_3 pb-1">
                   Last Name<span class="text-primary_2"> *</span>
-                </h2></label
-              >
-              <input class="w-full p-1 py-3 border-2 rounded-md" type="text" />
-              <small class="text-base text-primary_3">error message</small>
+                </h2>
+              </label>
+              <input
+                class="w-full p-3 border-2 rounded-md"
+                id="last-name"
+                type="text"
+              />
+              <p id="error-lname" class="text-base text-primary_3 hidden">
+                error message
+              </p>
             </div>
           </div>
           <div class="pb-3">
-            <h2 class="text-secondary_3 pb-1">
-              Email Address<span class="text-primary_2"> *</span>
-            </h2>
-            <input class="w-full p-1 py-3 border-2 rounded-md" type="email" />
-            <small class="text-base text-primary_3">error message</small>
+            <label
+              ><h2 class="text-secondary_3 pb-1">
+                Email Address<span class="text-primary_2 hidden"> *</span>
+              </h2></label
+            >
+            <input
+              class="peer w-full p-1 py-3 border-2 rounded-md"
+              id="email"
+              type="email"
+              placeholder=""
+            />
+            <p
+              id="error-email"
+              class="text-base text-primary_3 hidden peer-invalid:block"
+            >
+              error message
+            </p>
           </div>
           <div>
             <div class="pb-3">
@@ -81,7 +101,12 @@
                 <h3 class="text-secondary_3">Support Request</h3></label
               >
             </div>
-            <small class="text-base text-primary_3">error message</small>
+            <p
+              id="error-query"
+              class="text-base text-primary_3 hidden peer-invalid:block"
+            >
+              error message
+            </p>
           </div>
           <div class="pb-3">
             <label for="text-message"
@@ -126,6 +151,5 @@
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by <a href="#">Jerome R Castro</a>.
     </div>
-    <script src="../plugin/main.js"></script>
   </body>
 </html>

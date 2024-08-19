@@ -584,6 +584,10 @@ html {
   display: flex;
 }
 
+.hidden{
+  display: none;
+}
+
 .min-h-screen{
   min-height: 100vh;
 }
@@ -742,6 +746,10 @@ html {
 
 .hover\:cursor-pointer:hover{
   cursor: pointer;
+}
+
+.peer:invalid ~ .peer-invalid\:block{
+  display: block;
 }
 
 @media (min-width: 768px){
