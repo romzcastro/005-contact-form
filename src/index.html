@@ -34,11 +34,11 @@
                 </h2>
               </label>
               <input
-                class="first-name w-full p-3 border-2 rounded-md px-5 focus:outline-none focus:border-primary_2 hover:cursor-pointer"
+                class="first-name w-full p-3 border-[1px] border-secondary_2 rounded-md px-5 hover:cursor-pointer focus:border-primary_2 hover:border-[1px] hover:border-primary_2"
                 id="first-name"
                 type="text"
               />
-              <p id="error-fname" class="text-base text-primary_3 hidden">
+              <p id="error-fname" class="text-sm text-primary_3 hidden mt-2">
                 error message
               </p>
             </div>
@@ -49,11 +49,11 @@
                 </h2>
               </label>
               <input
-                class="w-full p-3 border-2 rounded-md px-5 focus:outline-none focus:border-primary_2 hover:cursor-pointer"
+                class="w-full p-3 border-[1px] border-secondary_2 rounded-md px-5 hover:cursor-pointer focus:border-primary_2 hover:border-[1px] hover:border-primary_2"
                 id="last-name"
                 type="text"
               />
-              <p id="error-lname" class="text-base text-primary_3 hidden">
+              <p id="error-lname" class="text-sm text-primary_3 hidden mt-2">
                 error message
               </p>
             </div>
@@ -61,18 +61,18 @@
           <div class="pb-3">
             <label
               ><h2 class="text-secondary_3 pb-1">
-                Email Address<span class="text-primary_2 hidden"> *</span>
+                Email Address<span class="text-primary_2"> *</span>
               </h2></label
             >
             <input
-              class="peer w-full p-1 py-3 border-2 rounded-md px-5 focus:outline-none focus:border-primary_2 hover:cursor-pointer"
+              class="peer w-full p-1 py-3 border-[1px] border-secondary_2 rounded-md px-5 hover:cursor-pointer focus:border-primary_2 hover:border-[1px] hover:border-primary_2"
               id="email"
               type="email"
               placeholder=""
             />
             <p
               id="error-email"
-              class="text-base text-primary_3 hidden peer-invalid:block"
+              class="text-sm text-primary_3 hidden mt-2 peer-invalid:block"
             >
               error message
             </p>
@@ -84,7 +84,7 @@
               </h2></label
             >
             <div
-              class="flex relative justify-start items-center p-2 py-3 border-2 rounded-md gap-3 mb-3"
+              class="flex relative justify-start items-center p-2 py-3 rounded-md gap-3 mb-3 cursor-pointer border-secondary_2 border-[1px] focus:border-primary_2 hover:border-[1px] hover:border-primary_2"
             >
               <input
                 class="ml-3 accent-primary_2 cursor-pointer peer z-30"
@@ -107,7 +107,7 @@
               ></div>
             </div>
             <div
-              class="flex relative justify-start items-center p-2 py-3 border-2 rounded-md gap-3 mb-3 cursor-pointer"
+              class="flex relative justify-start items-center p-2 py-3 rounded-md gap-3 mb-3 cursor-pointer border-secondary_2 border-[1px] focus:border-primary_2 hover:border-[1px] hover:border-primary_2"
             >
               <input
                 class="ml-3 accent-primary_2 cursor-pointer peer z-30"
@@ -147,7 +147,7 @@
                 class="w-full h-full -left-0 absolute peer-checked:bg-primary_1 peer-checked:outline peer-checked:outline-1 peer-checked:outline-primary_2 rounded-md z-10"
               ></div>
             </div>
-            <p id="error-query" class="text-base text-primary_3 hidden">
+            <p id="error-query" class="text-sm text-primary_3 hidden mt-2">
               error message
             </p>
           </div>
@@ -158,17 +158,17 @@
               </h2></label
             >
             <textarea
-              class="w-full p-1 border-2 rounded-md"
+              class="w-full p-1 rounded-md border-secondary_2 border-[1px] focus:border-primary_2 hover:border-[1px] hover:border-primary_2"
               name="message"
               rows="6"
               cols="30"
               id="message"
             ></textarea>
-            <p id="error-message" class="text-base text-primary_3 hidden">
+            <p id="error-message" class="text-sm text-primary_3 hidden mt-2">
               error message
             </p>
           </div>
-          <div class="flex items-center p-2 rounded-md gap-3 my-3 flex-col">
+          <div class="flex items-center py-2 rounded-md gap-3 my-3 flex-col">
             <div class="flex w-full gap-2">
               <input
                 class="accent-primary_2 cursor-pointer"
@@ -186,7 +186,7 @@
             </div>
 
             <div class="flex w-full">
-              <p id="error-consent" class="text-base text-primary_3 hidden">
+              <p id="error-consent" class="text-sm text-primary_3 hidden">
                 error message
               </p>
             </div>
