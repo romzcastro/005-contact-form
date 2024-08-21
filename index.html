@@ -1,4 +1,209 @@
-<meta
-  http-equiv="refresh"
-  content="0; url=https://repo.github.io/src/index.html"
-/>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./src/output.css" />
+    <script defer src="../plugin/main.js"></script>
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body class="text-sm text-left min-h-screen flex-center bg-secondary_2">
+    <main class="w-screen max-w-[640px] p-6 md:w-screen md:max-w-4xl">
+      <!-- wrapper -->
+      <section class="bg-secondary_1 rounded-xl p-5 md:p-10">
+        <!-- main form -->
+        <h1 class="text-secondary_3 font-bold text-3xl pb-8">Contact Us</h1>
+        <form
+          class="font-medium flex flex-col md:flex md:w-full"
+          id="form"
+          action="/"
+          onkeyup="checkInputs()"
+        >
+          <div class="md:flex gap-4">
+            <div class="md:flex-1 pb-3 form-control">
+              <label
+                ><h2 class="text-secondary_3 pb-1npm install -D tailwindcss">
+                  First Name<span class="text-primary_2"> *</span>
+                </h2>
+              </label>
+              <input
+                class="first-name text-secondary_3 w-full p-3 border-[1px] border-secondary_2 rounded-md px-5 hover:cursor-pointer focus:border-primary_2 hover:border-[1px] hover:border-primary_2"
+                id="first-name"
+                type="text"
+              />
+              <p id="error-fname" class="text-sm text-primary_3 hidden mt-2">
+                error message
+              </p>
+            </div>
+            <div class="md:flex-1 pb-3 form-control">
+              <label
+                ><h2 class="text-secondary_3 pb-1">
+                  Last Name<span class="text-primary_2"> *</span>
+                </h2>
+              </label>
+              <input
+                class="w-full text-secondary_3 p-3 border-[1px] border-secondary_2 rounded-md px-5 hover:cursor-pointer focus:border-primary_2 hover:border-[1px] hover:border-primary_2"
+                id="last-name"
+                type="text"
+              />
+              <p id="error-lname" class="text-sm text-primary_3 hidden mt-2">
+                error message
+              </p>
+            </div>
+          </div>
+          <div class="pb-3">
+            <label
+              ><h2 class="text-secondary_3 pb-1">
+                Email Address<span class="text-primary_2"> *</span>
+              </h2></label
+            >
+            <input
+              class="peer text-secondary_3 w-full p-1 py-3 border-[1px] border-secondary_2 rounded-md px-5 hover:cursor-pointer focus:border-primary_2 hover:border-[1px] hover:border-primary_2"
+              id="email"
+              type="email"
+              placeholder=""
+            />
+            <p
+              id="error-email"
+              class="text-sm text-primary_3 hidden mt-2 peer-invalid:block"
+            >
+              error message
+            </p>
+          </div>
+          <div class="pb-3">
+            <label for="querytype"
+              ><h2 class="text-secondary_3 pb-1">
+                Query Type<span class="text-primary_2"> *</span>
+              </h2></label
+            >
+            <div
+              class="flex relative justify-start items-center p-2 py-3 rounded-md gap-3 mb-3 cursor-pointer border-secondary_2 border-[1px] focus:border-primary_2 hover:border-[1px] hover:border-primary_2"
+            >
+              <input
+                class="ml-3 accent-primary_2 cursor-pointer peer z-30"
+                type="radio"
+                value="General Enquiry"
+                id="query-option1"
+                name="query-option"
+                onclick="checkButton()"
+                checked
+              />
+              <label
+                for="query-option1"
+                class="flex z-20 text-secondary_3 cursor-pointer"
+                for="generalenquiry"
+              >
+                General Enquiry
+              </label>
+              <div
+                class="w-full h-full -left-0 absolute peer-checked:bg-primary_1 peer-checked:outline peer-checked:outline-1 peer-checked:outline-primary_2 rounded-md z-10"
+              ></div>
+            </div>
+            <div
+              class="flex relative justify-start items-center p-2 py-3 rounded-md gap-3 mb-3 cursor-pointer border-secondary_2 border-[1px] focus:border-primary_2 hover:border-[1px] hover:border-primary_2"
+            >
+              <input
+                class="ml-3 accent-primary_2 cursor-pointer peer z-30"
+                type="radio"
+                value="Support Request"
+                id="query-option2"
+                name="query-option"
+                onclick="checkButton()"
+                checked
+              />
+              <label
+                class="flex z-20 text-secondary_3 cursor-pointer"
+                for="query-option2"
+              >
+                Support Request</label
+              >
+              <div
+                class="w-full h-full -left-0 absolute peer-checked:bg-primary_1 peer-checked:outline peer-checked:outline-1 peer-checked:outline-primary_2 rounded-md z-10"
+              ></div>
+            </div>
+            <div
+              class="relative justify-start items-center p-2 py-3 border-2 rounded-md gap-3 mb-3 cursor-pointer hidden"
+            >
+              <input
+                class="ml-3 accent-primary_2 cursor-pointer peer z-30"
+                type="radio"
+                value="Support Request"
+                id="query-option2"
+                name="query-option"
+                onclick="checkButton()"
+                checked
+              />
+              <label class="flex z-20" for="supportrequest">
+                <h3 class="text-secondary_3">Support Request</h3></label
+              >
+              <div
+                class="w-full h-full -left-0 absolute peer-checked:bg-primary_1 peer-checked:outline peer-checked:outline-1 peer-checked:outline-primary_2 rounded-md z-10"
+              ></div>
+            </div>
+            <p id="error-query" class="text-sm text-primary_3 hidden mt-2">
+              error message
+            </p>
+          </div>
+          <div class="pb-3">
+            <label for="text-message"
+              ><h2 class="text-secondary_3 pb-1">
+                Message<span class="text-primary_2"> *</span>
+              </h2></label
+            >
+            <textarea
+              class="w-full p-4 text-secondary_3 rounded-md border-secondary_2 border-[1px] focus:border-primary_2 hover:border-[1px] hover:border-primary_2"
+              name="message"
+              rows="6"
+              cols="30"
+              id="message"
+            ></textarea>
+            <p id="error-message" class="text-sm text-primary_3 hidden mt-2">
+              error message
+            </p>
+          </div>
+          <div class="flex items-center py-2 rounded-md gap-3 my-3 flex-col">
+            <div class="flex w-full gap-2">
+              <input
+                class="accent-primary_2 cursor-pointer"
+                type="checkbox"
+                value="consent"
+                id="consent-check"
+              />
+              <label
+                class="text-base text-secondary_3 cursor-pointer"
+                for="consent-check"
+              >
+                I consent to being contacted by the team
+                <span class="text-primary_2"> *</span>
+              </label>
+            </div>
+
+            <div class="flex w-full">
+              <p id="error-consent" class="text-sm text-primary_3 hidden">
+                error message
+              </p>
+            </div>
+          </div>
+          <button
+            class="w-full bg-primary_2 p-3 rounded-md text-primary_1 font-bold text-xl hover:cursor-pointer"
+            type="submit"
+          >
+            SUBMIT
+          </button>
+        </form>
+      </section>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Jerome R Castro</a>.
+    </div>
+  </body>
+</html>
