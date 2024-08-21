@@ -57,7 +57,7 @@ function checkInputs() {
 
   if (emailValue === '') {
     setErrorForEmail(email, 'Please enter a valid email address');
-    email.placeholder = 'example@mail/com';
+    email.placeholder = 'example#mail.com';
     errorEmail.style.display = 'block';
   } else if (!isEmail(emailValue)) {
     setErrorForEmail(email, 'Please enter a valid email address');

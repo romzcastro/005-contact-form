@@ -34,7 +34,7 @@
                 </h2>
               </label>
               <input
-                class="first-name w-full p-3 border-2 rounded-md"
+                class="first-name w-full p-3 border-2 rounded-md px-5 focus:outline-none focus:border-primary_2 hover:cursor-pointer"
                 id="first-name"
                 type="text"
               />
@@ -49,7 +49,7 @@
                 </h2>
               </label>
               <input
-                class="w-full p-3 border-2 rounded-md"
+                class="w-full p-3 border-2 rounded-md px-5 focus:outline-none focus:border-primary_2 hover:cursor-pointer"
                 id="last-name"
                 type="text"
               />
@@ -65,7 +65,7 @@
               </h2></label
             >
             <input
-              class="peer w-full p-1 py-3 border-2 rounded-md"
+              class="peer w-full p-1 py-3 border-2 rounded-md px-5 focus:outline-none focus:border-primary_2 hover:cursor-pointer"
               id="email"
               type="email"
               placeholder=""
@@ -77,43 +77,75 @@
               error message
             </p>
           </div>
-          <div>
-            <div class="pb-3">
-              <label for="querytype"
-                ><h2 class="text-secondary_3 pb-1">
-                  Query Type<span class="text-primary_2"> *</span>
-                </h2></label
-              >
-            </div>
+          <div class="pb-3">
+            <label for="querytype"
+              ><h2 class="text-secondary_3 pb-1">
+                Query Type<span class="text-primary_2"> *</span>
+              </h2></label
+            >
             <div
-              class="flex justify-start items-center p-2 py-3 border-2 rounded-md gap-3 mb-3"
+              class="flex relative justify-start items-center p-2 py-3 border-2 rounded-md gap-3 mb-3"
             >
               <input
-                class="ml-3"
+                class="ml-3 accent-primary_2 cursor-pointer peer z-30"
                 type="radio"
                 value="General Enquiry"
                 id="query-option1"
                 name="query-option"
-                onclick="return checkButton()"
+                onclick="checkButton()"
+                checked
               />
-              <label class="flex" for="generalenquiry">
-                <h3 class="text-secondary_3">General Enquiry</h3></label
+              <label
+                for="query-option1"
+                class="flex z-20 text-secondary_3 cursor-pointer"
+                for="generalenquiry"
               >
+                General Enquiry
+              </label>
+              <div
+                class="w-full h-full -left-0 absolute peer-checked:bg-primary_1 peer-checked:outline peer-checked:outline-1 peer-checked:outline-primary_2 rounded-md z-10"
+              ></div>
             </div>
             <div
-              class="flex justify-start items-center p-2 py-3 border-2 rounded-md gap-3 mb-3"
+              class="flex relative justify-start items-center p-2 py-3 border-2 rounded-md gap-3 mb-3 cursor-pointer"
             >
               <input
-                class="ml-3"
+                class="ml-3 accent-primary_2 cursor-pointer peer z-30"
                 type="radio"
                 value="Support Request"
                 id="query-option2"
                 name="query-option"
                 onclick="checkButton()"
+                checked
               />
-              <label class="flex" for="supportrequest">
+              <label
+                class="flex z-20 text-secondary_3 cursor-pointer"
+                for="query-option2"
+              >
+                Support Request</label
+              >
+              <div
+                class="w-full h-full -left-0 absolute peer-checked:bg-primary_1 peer-checked:outline peer-checked:outline-1 peer-checked:outline-primary_2 rounded-md z-10"
+              ></div>
+            </div>
+            <div
+              class="relative justify-start items-center p-2 py-3 border-2 rounded-md gap-3 mb-3 cursor-pointer hidden"
+            >
+              <input
+                class="ml-3 accent-primary_2 cursor-pointer peer z-30"
+                type="radio"
+                value="Support Request"
+                id="query-option2"
+                name="query-option"
+                onclick="checkButton()"
+                checked
+              />
+              <label class="flex z-20" for="supportrequest">
                 <h3 class="text-secondary_3">Support Request</h3></label
               >
+              <div
+                class="w-full h-full -left-0 absolute peer-checked:bg-primary_1 peer-checked:outline peer-checked:outline-1 peer-checked:outline-primary_2 rounded-md z-10"
+              ></div>
             </div>
             <p id="error-query" class="text-base text-primary_3 hidden">
               error message
@@ -138,13 +170,19 @@
           </div>
           <div class="flex items-center p-2 rounded-md gap-3 my-3 flex-col">
             <div class="flex w-full gap-2">
-              <input type="checkbox" value="consent" id="consent-check" />
-              <label for="consent"
-                ><h2 class="text-base text-secondary_3">
-                  I consent to being contacted by the team
-                  <span class="text-primary_2"> *</span>
-                </h2></label
+              <input
+                class="accent-primary_2 cursor-pointer"
+                type="checkbox"
+                value="consent"
+                id="consent-check"
+              />
+              <label
+                class="text-base text-secondary_3 cursor-pointer"
+                for="consent-check"
               >
+                I consent to being contacted by the team
+                <span class="text-primary_2"> *</span>
+              </label>
             </div>
 
             <div class="flex w-full">
