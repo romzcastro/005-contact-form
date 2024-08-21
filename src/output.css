@@ -826,6 +826,10 @@ html {
   padding: 1.5rem;
 }
 
+.p-4{
+  padding: 1rem;
+}
+
 .py-3{
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -986,6 +990,10 @@ html {
   cursor: pointer;
 }
 
+.focus\:border-\[1px\]:focus{
+  border-width: 1px;
+}
+
 .focus\:border-secondary_2:focus{
   --tw-border-opacity: 1;
   border-color: hsl(186 15% 59% / var(--tw-border-opacity));
@@ -994,6 +1002,16 @@ html {
 .focus\:border-primary_2:focus{
   --tw-border-opacity: 1;
   border-color: hsl(169 82% 27% / var(--tw-border-opacity));
+}
+
+.focus\:bg-primary_2:focus{
+  --tw-bg-opacity: 1;
+  background-color: hsl(169 82% 27% / var(--tw-bg-opacity));
+}
+
+.focus\:bg-primary_3:focus{
+  --tw-bg-opacity: 1;
+  background-color: hsl(0 66% 54% / var(--tw-bg-opacity));
 }
 
 .focus\:outline-none:focus{

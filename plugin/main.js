@@ -38,7 +38,7 @@ function checkInputs() {
   const messageValue = message.value.trim();
 
   if (firstNameValue === '') {
-    setErrorForFname(firstName, 'The Field is required');
+    setErrorForFname(firstName, 'This Field is required');
     var input = document.getElementById('first-name');
     errorFname.style.display = 'block';
   } else {
@@ -47,7 +47,7 @@ function checkInputs() {
   }
 
   if (lastNameValue === '') {
-    setErrorForLName(lastName, 'The Field is required');
+    setErrorForLName(lastName, 'This Field is required');
     var input = document.getElementById('last-name');
     errorLname.style.display = 'block';
   } else {
@@ -57,7 +57,7 @@ function checkInputs() {
 
   if (emailValue === '') {
     setErrorForEmail(email, 'Please enter a valid email address');
-    email.placeholder = 'example@mail.com';
+    email.placeholder = 'example#mail.com';
     errorEmail.style.display = 'block';
   } else if (!isEmail(emailValue)) {
     setErrorForEmail(email, 'Please enter a valid email address');
