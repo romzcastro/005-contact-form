@@ -27,7 +27,6 @@ form.addEventListener('submit', (e) => {
     return false;
   } else {
     errorConcent.style.display = 'none';
-    form.submit;
   }
 });
 
