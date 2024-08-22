@@ -116,7 +116,3 @@ function isEmail(email) {
     email
   );
 }
-
-// function checkButton() {}
-
-// function validateCheck() {}
