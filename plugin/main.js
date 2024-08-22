@@ -119,3 +119,13 @@ function checkButton() {
     errorQuery.style.display = 'none';
   }
 }
+
+function validateCheck() {
+  if (!consentCheck.checked) {
+    errorConcent.innerText =
+      'To submit this form, please consent to being contacted';
+    errorConcent.style.display = 'block';
+  } else {
+    errorConcent.style.display = 'none';
+  }
+}
