@@ -24,7 +24,6 @@ form.addEventListener('submit', (e) => {
     errorConcent.innerText =
       'To submit this form, please consent to being contacted';
     errorConcent.style.display = 'block';
-    return false;
   } else {
     errorConcent.style.display = 'none';
   }
