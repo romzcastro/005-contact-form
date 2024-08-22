@@ -16,17 +16,8 @@ const errorMessage = document.getElementById('error-message');
 const errorConcent = document.getElementById('error-consent');
 
 form.addEventListener('submit', (e) => {
-  e.preventDefault();
   checkInputs();
-  checkButton();
-
-  if (!consentCheck.checked) {
-    errorConcent.innerText =
-      'To submit this form, please consent to being contacted';
-    errorConcent.style.display = 'block';
-  } else {
-    errorConcent.style.display = 'none';
-  }
+  e.preventDefault();
 });
 
 function checkInputs() {
@@ -72,6 +63,21 @@ function checkInputs() {
   } else {
     errorMessage.style.display = 'none';
   }
+
+  if (!option1.checked && !option2.checked) {
+    errorQuery.innerText = 'Please select a query type';
+    errorQuery.style.display = 'block';
+  } else {
+    errorQuery.style.display = 'none';
+  }
+
+  if (!consentCheck.checked) {
+    errorConcent.innerText =
+      'To submit this form, please consent to being contacted';
+    errorConcent.style.display = 'block';
+  } else {
+    errorConcent.style.display = 'none';
+  }
 }
 
 function setErrorForFname(input, message) {
@@ -111,21 +117,6 @@ function isEmail(email) {
   );
 }
 
-function checkButton() {
-  if (!option1.checked && !option2.checked) {
-    errorQuery.innerText = 'Please select a query type';
-    errorQuery.style.display = 'block';
-  } else {
-    errorQuery.style.display = 'none';
-  }
-}
+// function checkButton() {}
 
-function validateCheck() {
-  if (!consentCheck.checked) {
-    errorConcent.innerText =
-      'To submit this form, please consent to being contacted';
-    errorConcent.style.display = 'block';
-  } else {
-    errorConcent.style.display = 'none';
-  }
-}
+// function validateCheck() {}
