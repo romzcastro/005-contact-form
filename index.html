@@ -33,7 +33,7 @@
           class="font-medium flex flex-col md:flex md:w-full"
           id="form"
           action="/"
-          onkeyup="checkInputs()"
+          onsubmit="checkInputs()"
         >
           <div class="md:flex gap-4">
             <div class="md:flex-1 pb-3 form-control">
@@ -101,7 +101,6 @@
                 value="General Enquiry"
                 id="query-option1"
                 name="query-option"
-                onclick="checkInputs()"
                 checked
               />
               <label
@@ -124,7 +123,6 @@
                 value="Support Request"
                 id="query-option2"
                 name="query-option"
-                onclick="checkInputs()"
                 checked
               />
               <label
@@ -146,7 +144,7 @@
                 value="Support Request"
                 id="query-option2"
                 name="query-option"
-                onclick="checkInputs()"
+                onfocus="checkInputs()"
                 checked
               />
               <label class="flex z-20" for="supportrequest">
@@ -184,7 +182,7 @@
                 type="checkbox"
                 value="consent"
                 id="consent-check"
-                onclick="checkInputs()"
+                onclick="checkConcent()"
               />
               <label
                 class="text-base text-secondary_3 cursor-pointer"

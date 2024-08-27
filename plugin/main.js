@@ -6,6 +6,7 @@ const option1 = document.getElementById('query-option1');
 const option2 = document.getElementById('query-option2');
 const message = document.getElementById('message');
 const consentCheck = document.getElementById('consent-check');
+const showHide = document.getElementById('show-hide');
 
 // error message
 const errorFname = document.getElementById('error-fname');
@@ -16,7 +17,6 @@ const errorMessage = document.getElementById('error-message');
 const errorConcent = document.getElementById('error-consent');
 
 form.addEventListener('submit', (e) => {
-  checkInputs();
   e.preventDefault();
 });
 
@@ -25,52 +25,42 @@ function checkInputs() {
   const lastNameValue = lastName.value.trim();
   const emailValue = email.value.trim();
   const messageValue = message.value.trim();
-
   if (firstNameValue === '') {
     setErrorForFname(firstName, 'This Field is required');
     var input = document.getElementById('first-name');
     errorFname.style.display = 'block';
-  } else {
-    setSuccessFor(firstName);
-    errorFname.style.display = 'none';
-  }
-
-  if (lastNameValue === '') {
+  } else if (lastNameValue === '') {
     setErrorForLName(lastName, 'This Field is required');
     var input = document.getElementById('last-name');
     errorLname.style.display = 'block';
-  } else {
-    setSuccessFor(lastName);
-    errorLname.style.display = 'none';
-  }
-
-  if (emailValue === '') {
+  } else if (emailValue === '') {
     setErrorForEmail(email, 'Please enter a valid email address');
     email.placeholder = 'example#mail.com';
     errorEmail.style.display = 'block';
   } else if (!isEmail(emailValue)) {
     setErrorForEmail(email, 'Please enter a valid email address');
     errorEmail.style.display = 'block';
-  } else {
-    setSuccessFor(email);
-    errorEmail.style.display = 'none';
-  }
-
-  if (messageValue === '') {
+  } else if (messageValue === '') {
     setErrorForMessage(message, 'This field is required');
     var input = document.getElementById('message');
     errorMessage.style.display = 'block';
-  } else {
-    errorMessage.style.display = 'none';
-  }
-
-  if (!option1.checked && !option2.checked) {
+  } else if (!option1.checked && !option2.checked) {
     errorQuery.innerText = 'Please select a query type';
     errorQuery.style.display = 'block';
   } else {
+    setSuccessFor(firstName);
+    errorFname.style.display = 'none';
+    setSuccessFor(lastName);
+    errorLname.style.display = 'none';
+    setSuccessFor(email);
+    errorEmail.style.display = 'none';
+    errorMessage.style.display = 'none';
     errorQuery.style.display = 'none';
+    showHide.style.display = 'block';
   }
+}
 
+function checkConcent() {
   if (!consentCheck.checked) {
     errorConcent.innerText =
       'To submit this form, please consent to being contacted';
