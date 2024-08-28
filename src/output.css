@@ -883,6 +883,28 @@ html {
   border-color: hsl(169 82% 27% / var(--tw-border-opacity));
 }
 
+.hover\:bg-secondary_3:hover{
+  --tw-bg-opacity: 1;
+  background-color: hsl(187 24% 22% / var(--tw-bg-opacity));
+}
+
+.hover\:bg-primary_2:hover{
+  --tw-bg-opacity: 1;
+  background-color: hsl(169 82% 27% / var(--tw-bg-opacity));
+}
+
+.hover\:transition:hover{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.hover\:ease-in-out:hover{
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .focus\:border-primary_2:focus{
   --tw-border-opacity: 1;
   border-color: hsl(169 82% 27% / var(--tw-border-opacity));
