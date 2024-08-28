@@ -33,7 +33,7 @@
           class="font-medium flex flex-col md:flex md:w-full"
           id="form"
           action="/"
-          onsubmit="checkInputs()"
+          onsubmit="checkFname(), checkLname(), checkEmail(), checkMessage(), checkQuerytype(), checkConcent()"
         >
           <div class="md:flex gap-4">
             <div class="md:flex-1 pb-3 form-control">
@@ -46,6 +46,7 @@
                 class="first-name text-secondary_3 w-full p-3 border-[1px] border-secondary_2 rounded-md px-5 hover:cursor-pointer focus:border-primary_2 hover:border-[1px] hover:border-primary_2"
                 id="first-name"
                 type="text"
+                onkeypress="checkFname()"
               />
               <p id="error-fname" class="text-sm text-primary_3 hidden mt-2">
                 error message
@@ -61,6 +62,7 @@
                 class="w-full text-secondary_3 p-3 border-[1px] border-secondary_2 rounded-md px-5 hover:cursor-pointer focus:border-primary_2 hover:border-[1px] hover:border-primary_2"
                 id="last-name"
                 type="text"
+                onkeypress="checkLname()"
               />
               <p id="error-lname" class="text-sm text-primary_3 hidden mt-2">
                 error message
@@ -78,6 +80,7 @@
               id="email"
               type="email"
               placeholder=""
+              onkeypress="checkEmail()"
             />
             <p
               id="error-email"
@@ -101,6 +104,7 @@
                 value="General Enquiry"
                 id="query-option1"
                 name="query-option"
+                onclick="checkQuerytype()"
                 checked
               />
               <label
@@ -123,6 +127,7 @@
                 value="Support Request"
                 id="query-option2"
                 name="query-option"
+                onclick="checkQuerytype()"
                 checked
               />
               <label
@@ -144,7 +149,6 @@
                 value="Support Request"
                 id="query-option2"
                 name="query-option"
-                onfocus="checkInputs()"
                 checked
               />
               <label class="flex z-20" for="supportrequest">
@@ -170,6 +174,7 @@
               rows="6"
               cols="30"
               id="message"
+              onkeypress="checkMessage()"
             ></textarea>
             <p id="error-message" class="text-sm text-primary_3 hidden mt-2">
               error message

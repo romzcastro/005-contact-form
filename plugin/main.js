@@ -18,45 +18,78 @@ const errorConcent = document.getElementById('error-consent');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+
+  if (checkFname() && checkLname()) {
+    const showHide = document.getElementById('show-hide');
+    showHide.style.display = 'block';
+    // showHide.style.display = 'none';
+  }
 });
 
-function checkInputs() {
+function checkFname() {
   const firstNameValue = firstName.value.trim();
-  const lastNameValue = lastName.value.trim();
-  const emailValue = email.value.trim();
-  const messageValue = message.value.trim();
   if (firstNameValue === '') {
     setErrorForFname(firstName, 'This Field is required');
     var input = document.getElementById('first-name');
     errorFname.style.display = 'block';
-  } else if (lastNameValue === '') {
-    setErrorForLName(lastName, 'This Field is required');
-    var input = document.getElementById('last-name');
-    errorLname.style.display = 'block';
-  } else if (emailValue === '') {
-    setErrorForEmail(email, 'Please enter a valid email address');
-    email.placeholder = 'example#mail.com';
-    errorEmail.style.display = 'block';
-  } else if (!isEmail(emailValue)) {
-    setErrorForEmail(email, 'Please enter a valid email address');
-    errorEmail.style.display = 'block';
-  } else if (messageValue === '') {
-    setErrorForMessage(message, 'This field is required');
-    var input = document.getElementById('message');
-    errorMessage.style.display = 'block';
-  } else if (!option1.checked && !option2.checked) {
-    errorQuery.innerText = 'Please select a query type';
-    errorQuery.style.display = 'block';
+    return false;
   } else {
     setSuccessFor(firstName);
     errorFname.style.display = 'none';
+    return true;
+  }
+}
+
+function checkLname() {
+  const lastNameValue = lastName.value.trim();
+  if (lastNameValue === '') {
+    setErrorForLName(lastName, 'This Field is required');
+    var input = document.getElementById('last-name');
+    errorLname.style.display = 'block';
+    return false;
+  } else {
     setSuccessFor(lastName);
     errorLname.style.display = 'none';
+    return true;
+  }
+}
+
+function checkEmail() {
+  const emailValue = email.value.trim();
+  if (emailValue === '') {
+    setErrorForEmail(email, 'Please enter a valid email address');
+    email.placeholder = 'example#mail.com';
+    errorEmail.style.display = 'block';
+    return false;
+  } else if (!isEmail(emailValue)) {
+    setErrorForEmail(email, 'Please enter a valid email address');
+    errorEmail.style.display = 'block';
+    return false;
+  } else {
     setSuccessFor(email);
     errorEmail.style.display = 'none';
+  }
+}
+
+function checkMessage() {
+  const messageValue = message.value.trim();
+  if (messageValue === '') {
+    setErrorForMessage(message, 'This field is required');
+    var input = document.getElementById('message');
+    errorMessage.style.display = 'block';
+    return false;
+  } else {
     errorMessage.style.display = 'none';
+  }
+}
+
+function checkQuerytype() {
+  if (!option1.checked && !option2.checked) {
+    errorQuery.innerText = 'Please select a query type';
+    errorQuery.style.display = 'block';
+    return false;
+  } else {
     errorQuery.style.display = 'none';
-    showHide.style.display = 'block';
   }
 }
 
@@ -65,6 +98,7 @@ function checkConcent() {
     errorConcent.innerText =
       'To submit this form, please consent to being contacted';
     errorConcent.style.display = 'block';
+    return false;
   } else {
     errorConcent.style.display = 'none';
   }
@@ -95,6 +129,7 @@ function setErrorForMessage(input, message) {
   const formControl = input.parentElement;
   const errorMessage = formControl.querySelector('#error-message');
   errorMessage.innerText = message;
+  showHide.style.display = 'none';
 }
 
 function setSuccessFor(input) {
