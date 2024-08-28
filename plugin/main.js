@@ -19,10 +19,16 @@ const errorConcent = document.getElementById('error-consent');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  if (checkFname() && checkLname()) {
+  if (
+    checkFname() &&
+    checkLname() &&
+    checkEmail() &&
+    checkMessage() &&
+    checkQuerytype() &&
+    checkConcent()
+  ) {
     const showHide = document.getElementById('show-hide');
     showHide.style.display = 'block';
-    // showHide.style.display = 'none';
   }
 });
 
@@ -68,6 +74,7 @@ function checkEmail() {
   } else {
     setSuccessFor(email);
     errorEmail.style.display = 'none';
+    return true;
   }
 }
 
@@ -80,6 +87,7 @@ function checkMessage() {
     return false;
   } else {
     errorMessage.style.display = 'none';
+    return true;
   }
 }
 
@@ -90,6 +98,7 @@ function checkQuerytype() {
     return false;
   } else {
     errorQuery.style.display = 'none';
+    return true;
   }
 }
 
@@ -101,6 +110,7 @@ function checkConcent() {
     return false;
   } else {
     errorConcent.style.display = 'none';
+    return true;
   }
 }
 
